@@ -1,419 +1,3 @@
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - DevFolio Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-
-  <link href="assets/css/main.css" rel="stylesheet">
-
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-
-        <h1 class="sitename">Adam Valade</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#services">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-img.jpg" alt="Hero background" data-aos="fade-in">
-
-      <div class="container d-flex flex-column align-items-center justify-content-center text-center"
-          data-aos="fade-up" data-aos-delay="100">
-
-        <h2>Adam Valade</h2>
-
-        <p class="mb-3">
-          <span class="typed"
-                data-typed-items="CS @ University of Michigan, Backend & Systems, Building practical products, Debugging under pressure"></span>
-        </p>
-
-        <p class="mb-4" style="max-width: 760px;">
-          I build reliable backend + systems-focused software. 
-        </p>
-
-        <div class="d-flex gap-2 justify-content-center flex-wrap">
-          <a href="#services" class="btn btn-primary px-4 py-2">View Projects</a>
-          <a href="assets/Adam_Valade_Resume.pdf" class="btn btn-outline-light px-4 py-2" target="_blank" rel="noopener noreferrer">
-            Resume (PDF)
-          </a>
-        </div>
-
-        <div class="mt-4 d-flex gap-3 justify-content-center">
-          <a href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="bi bi-github" style="font-size: 1.6rem;"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/adam-valade-690a25270" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="bi bi-linkedin" style="font-size: 1.6rem;"></i>
-          </a>
-          <a href="mailto:advalade@umich.edu" aria-label="Email">
-            <i class="bi bi-envelope" style="font-size: 1.6rem;"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-md-6">
-
-            <div class="row justify-content-between gy-4">
-              <div class="col-lg-5">
-                <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-7 about-info">
-                <p><strong>Name: </strong> <span>Adam Valade</span></p>
-                <p><strong>Profile: </strong> <span>Aspiring Systems Engineer & Full‑Stack Developer (CS ’26)</span></p>
-                <p><strong>Email: </strong> <span>advalade@umich.edu</span></p>
-              </div>
-            </div>
-
-            <div class="skills-content skills-animation">
-              <h5>Skills</h5>
-            
-              <div class="progress">
-                <span class="skill"><span>C++</span> <i class="val">95%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>Python</span> <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>JavaScript / Node.js</span> <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>React</span> <i class="val">70%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>Git / GitHub / CLI</span> <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>Systems Programming</span> <i class="val">85%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>REST APIs & Web Apps</span> <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            
-              <div class="progress">
-                <span class="skill"><span>Debugging & Problem Solving</span> <i class="val">95%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-
-          <div class="col-md-6">
-            <div class="about-me">
-              <h4>About Me</h4>
-              <p>
-                I'm a computer science student at the University of Michigan with a strong interest in backend development, systems programming, and building software that’s both efficient and practical.
-              </p><br>
-              <p>
-                I thrive on tackling challenging problems and learning new technologies. Whether I’m collaborating on a team, architecting a reliable service, or diving into unfamiliar tools, I approach every project with curiosity and a commitment to continuous improvement.
-              </p><br>
-              <p>
-                Outside of tech, I’m probably in the gym, watching the NBA, or playing chess. I'm currently looking for a Summer 2025 software engineering internship where I can contribute, learn fast, and grow with a sharp team.
-              </p>
-            </div>
-            
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Here's a summary of my education, experience, and technical background.</p>
-      </div>
-    
-      <div class="container">
-        <div class="row">
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Adam Valade</h4>
-              <p><em>Computer Science student at the University of Michigan with a strong foundation in backend development, systems programming, and web applications. Experienced in building real-world tools and automation scripts. Currently seeking a software engineering internship for Summer 2025.</em></p>
-              <ul>
-                <li>advalade@umich.edu</li>
-                <li>(248) 403-5657</li>
-              </ul>
-            </div>
-    
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Science in Computer Science</h4>
-              <h5>2022 - 2026 (Anticipated)</h5>
-              <p><em>University of Michigan</em></p>
-              <p>Minor in Mathematics. Relevant coursework includes Data Structures and Algorithms, Computer Vision, Cybersecurity, Discrete Mathematics, and Software Engineering.</p>
-            </div>
-            <div class="resume-item">
-              <h4>High School Diploma</h4>
-              <h5>2018 - 2022</h5>
-              <p><em>Fraser High School</em></p>
-              <p>Graduated with honors. Completed advanced coursework in AP Computer Science, IB Physics, IB Literature, AP Government, and AP Calculus BC.</p>
-            </div>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Data Research and Validation Intern</h4>
-              <h5>2023 - Present</h5>
-              <p><em>Alta Vista Technology</em></p>
-              <ul>
-                <li>Led optimization of CRM data systems, improving accuracy and accessibility across departments.</li>
-                <li>Automated data entry and validation using Python scripts, cutting errors by 40% and saving 20+ hours/week.</li>
-                <li>Supported team operations and helped draft project proposals and documentation.</li>
-                <li>Worked with complex APIs to automate workflows and enhance cross-platform integration.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Developer - Michigan Build and Launch</h4>
-              <h5>2024 - Present</h5>
-              <p><em>University of Michigan</em></p>
-              <ul>
-                <li>Collaborated in a team of 6–7 to build a personalized to-do list web app with Canvas API integration.</li>
-                <li>Contributed to strategic planning and agile development processes during weekly meetings.</li>
-                <li>Developed backend architecture for user auth, data storage, and secure API communication.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
-
-    <section id="services" class="services section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>A selection of technical projects that demonstrate my skills in backend development, systems programming, and full-stack applications.</p>
-      </div>
-    
-      <div class="container">
-        <div class="row gy-4">
-    
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-cpu"></i>
-              </div>
-              <h3>Chess Engine</h3>
-              <p>A UCI-compatible chess engine built using a C++ and Python hybrid backend. Hosted at <a href="https://megatronchess.com" target="_blank">megatronchess.com</a> with a custom frontend and move generation API integration.</p>
-              <br>
-    
-            </div>
-          </div>
-    
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-envelope-paper"></i>
-              </div>
-              <h3>Chore Scheduler Bot</h3>
-              <p>A Python automation script that rotates weekly chores among roommates and sends personalized assignments via Gmail SMTP. Includes run tracking, dynamic scheduling, and enable toggles.</p>
-              <br>
-             
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bar-chart"></i>
-              </div>
-              <h3>Letterman Word Morph</h3>
-              <p>Highly efficient C++ program that computes the shortest transformation path between two dictionary words via allowed modifications (insert, delete, change, or swap). Supports both BFS and DFS traversal, based on user input. Frontend demo pending.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-layers"></i>
-              </div>
-              <h3>LC2K Linker and Assembler</h3>
-              <p>Developed a complete assembler and linker for the LC2K instruction set architecture, a teaching-focused but Turing-complete ISA. Written in C, the toolchain transforms assembly code into executable machine code, including symbol resolution and memory layout processing.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-database"></i>
-              </div>
-              <h3>SQL-like In-Memory Database</h3>
-              <p>Implemented a C++ command-line database system supporting SQL-like operations such as CREATE, INSERT, DELETE, JOIN, and indexed queries. Features include dynamic typing, error handling, and support for hash and BST indexing for optimized performance.</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-cash-coin"></i>
-              </div>
-              <h3>Poker Bot</h3>
-              <p>A rule-based poker-playing bot developed in Python. Simulates betting logic, bluffing scenarios, and evaluates hand strength in heads-up games.</p>
-            </div>
-          </div>
-    
-        </div>
-      </div>
-
-    </section>
-
-    <section id="contact" class="contact section">
-
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>If you're interested in working together, have a project in mind, or just want to connect, feel free to reach out via email, phone, or LinkedIn. I'm always open to new opportunities and conversations.</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
-          <div class="row gy-5">
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3><a href="https://www.linkedin.com/in/adam-valade-690a25270" target="_blank">LinkedIn</a></h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  
-                  <h3><a href="https://github.com/Adamvalade" target="_blank">github</a></h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>advalade@umich.edu<h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-  <div id="preloader"></div>
-
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -421,11 +5,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Adam Valade | Software Engineer</title>
-  <meta name="description" content="Adam Valade — CS @ University of Michigan. Backend + systems-focused engineer building practical products. Live demo: megatronchess.com">
-  <meta name="keywords" content="Adam Valade, software engineer, backend, systems, University of Michigan, C++, Python, Node.js, projects">
+  <meta name="description" content="Adam Valade — CS @ University of Michigan. Software engineer building practical products and real-world projects.">
+  <meta name="keywords" content="Adam Valade, software engineer, University of Michigan, C++, Python, JavaScript, React, projects">
+  <meta property="og:description" content="Software engineer building practical products and real-world projects.">
 
   <meta property="og:title" content="Adam Valade | Software Engineer">
-  <meta property="og:description" content="Backend + systems-focused engineer building practical products. Live demo: megatronchess.com">
+  <meta property="og:description" content="Backend + systems-focused engineer building practical products.">
   <meta property="og:type" content="website">
   <!-- Optional: add a share image -->
   <!-- <meta property="og:image" content="assets/img/og-image.png"> -->
@@ -482,13 +67,11 @@
 
         <p class="mb-3">
           <span class="typed"
-                data-typed-items="CS @ University of Michigan, Backend & Systems, Building practical products, Debugging under pressure"></span>
+                data-typed-items="CS @ University of Michigan, Software Engineer, Building practical products, Strong debugging & problem solving"></span>
         </p>
 
         <p class="mb-4" style="max-width: 760px;">
-          I build reliable backend + systems-focused software.
-          Live demo:
-          <a href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">megatronchess.com</a>
+          I build practical software and ship projects end-to-end — from idea to deployment.
         </p>
 
         <div class="d-flex gap-2 justify-content-center flex-wrap">
@@ -550,21 +133,21 @@
 
           <div class="col-md-6">
             <div class="about-me">
-            <h4>About Me</h4>
+              <h4>About Me</h4>
 
-            <p>
-              I’m a Computer Science student at the University of Michigan with a strong focus on backend development and systems.
-              I build practical software that’s reliable, fast, and cleanly engineered.
-            </p>
+              <p>
+                I’m a Computer Science student at the University of Michigan who enjoys building practical software
+                and shipping projects end-to-end.
+              </p>
 
-            <p class="mt-3">
-              Strengths: Algorithms, Data Structures, Performance Optimization, Debugging.
-            </p>
+              <p class="mt-3">
+                Strengths: Algorithms, Data Structures, Performance Optimization, Debugging.
+              </p>
 
-            <p class="mt-3">
-              <strong>Seeking full-time software engineering roles (new grad 2026).</strong>
-            </p>
-          </div>
+              <p class="mt-3">
+                <strong>Seeking full-time software engineering roles (new grad 2026).</strong>
+              </p>
+            </div>
 
           </div>
         </div>
@@ -602,7 +185,7 @@
             <div class="resume-item pb-0">
               <h4>Adam Valade</h4>
               <p class="mb-2">
-                <em>Backend + systems-focused engineer. I build practical products, own the details, and debug hard problems.</em>
+                <em>Software engineer who builds practical products, owns the details, and debugs hard problems.</em>
               </p>
               <ul class="mb-0">
                 <li><a href="mailto:advalade@umich.edu">advalade@umich.edu</a></li>
@@ -650,7 +233,7 @@
     <section id="projects" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Projects</h2>
-        <p>Selected projects showcasing backend development, systems programming, and full-stack work.</p>
+        <p>Selected projects that show how I build and ship real software.</p>
       </div>
 
       <div class="container">
@@ -660,25 +243,28 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-cpu"></i></div>
+
               <h3>Chess Engine</h3>
-                <p class="mb-2">C++ / Python / JavaScript / REST API</p>
-                <p class="mb-2">Live Demo: <a href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">megatronchess.com</a></p>
+              <p class="mb-2">C++ / Python / JavaScript</p>
+              <p class="mb-2">
+                Live Demo:
+                <a href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">megatronchess.com</a>
+              </p>
 
-                <ul class="mb-3">
-                  <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
-                  <li>Built engine logic in Python, including game state handling, search routines, and evaluation functions.</li>
-                  <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations using HTML/CSS.</li>
-                  <li>Integrated the frontend with a Python backend through a REST API that exchanged JSON move data.</li>
-                  <li>Deployed the full system to Heroku, configuring the backend and frontend for live gameplay.</li>
-                </ul>
+              <ul class="mb-3">
+                <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
+                <li>Built engine logic in Python, including game state handling, search routines, and evaluation functions.</li>
+                <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations using HTML/CSS.</li>
+                <li>Integrated the frontend with a Python backend through a REST API that exchanged JSON move data.</li>
+                <li>Deployed the full system to Heroku, configuring the backend and frontend for live gameplay.</li>
+              </ul>
 
-                <div class="d-flex gap-2 flex-wrap">
-                  <a class="btn btn-sm btn-primary" href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                  <!-- If allowed, add a GitHub button here -->
-                </div>
+              <div class="d-flex gap-2 flex-wrap">
+                <a class="btn btn-sm btn-primary" href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
               </div>
             </div>
           </div>
+
 
           <!-- search engine -->
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -704,10 +290,6 @@
                 Finds shortest transformation path between words using insert/delete/change/swap.
               </p>
               <div class="text-muted small mb-3">C++ • Graph search (BFS/DFS) • CLI tooling</div>
-
-              <div class="d-flex gap-2 flex-wrap">
-                <a class="btn btn-sm btn-outline-secondary" href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
             </div>
           </div>
 
@@ -735,14 +317,10 @@
                 Command-line database supporting CREATE/INSERT/DELETE/JOIN and indexed queries.
               </p>
               <div class="text-muted small mb-3">C++ • Data structures • Indexing (hash/BST)</div>
-
-              <div class="d-flex gap-2 flex-wrap">
-                <a class="btn btn-sm btn-outline-secondary" href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
             </div>
           </div>
 
-          <!-- Poker -->
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-cash-coin"></i></div>
