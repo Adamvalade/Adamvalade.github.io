@@ -686,11 +686,24 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--background-color), transparent 45%); 
+  /* was 30% */
   position: absolute;
   inset: 0;
   z-index: 2;
 }
+
+
+/* .hero::before {
+  content: "";
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.45)
+  );
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+} */
 
 .hero .container {
   position: relative;
