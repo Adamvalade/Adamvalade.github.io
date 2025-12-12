@@ -535,39 +535,37 @@
            <div class="skills-content mt-4">
             <h5 class="mb-3">Core Skills</h5>
 
-            <ul class="list-unstyled text-muted">
-              <li class="mb-2">
-                <strong>Languages:</strong> C++, Python, JavaScript
-              </li>
-              <li class="mb-2">
-                <strong>Backend:</strong> Node.js / Express, REST APIs, Auth, Redis / Postgres
-              </li>
-              <li class="mb-2">
-                <strong>Systems:</strong> Debugging, performance, memory, concurrency fundamentals
-              </li>
-              <li class="mb-2">
-                <strong>Tools:</strong> Git/GitHub, CLI, Linux, testing & profiling
-              </li>
-            </ul>
+           <ul class="list-unstyled text-muted">
+            <li class="mb-2"><strong>Languages:</strong> C++, Python, JavaScript/TypeScript, SQL, Bash</li>
+            <li class="mb-2"><strong>Backend:</strong> Node.js, Express, Flask, REST APIs</li>
+            <li class="mb-2"><strong>Frontend:</strong> React, HTML, CSS, Tailwind, DOM manipulation</li>
+            <li class="mb-2"><strong>Databases:</strong> PostgreSQL, MongoDB, Redis</li>
+            <li class="mb-2"><strong>DevOps/Tools:</strong> Git, Docker, Heroku, AWS, Postman</li>
+            <li class="mb-2"><strong>Strengths:</strong> Algorithms, Data Structures, Performance Optimization, Debugging</li>
+          </ul>
+
           </div>
 
           </div>
 
           <div class="col-md-6">
             <div class="about-me">
-              <h4>About Me</h4>
-              <p>
-                I’m a Computer Science student at the University of Michigan focused on backend development and systems work.
-                I like building practical software that’s reliable, fast, and cleanly engineered.
-              </p>
-              <p class="mt-3">
-                I’ve built projects spanning C++ tooling, automation, and full-stack apps. I enjoy debugging hard issues,
-                owning the details, and shipping things people can actually use.
-              </p>
-              <p class="mt-3">
-                Currently seeking a <strong>Summer 2026</strong> software engineering internship.
-              </p>
-            </div>
+            <h4>About Me</h4>
+
+            <p>
+              I’m a Computer Science student at the University of Michigan with a strong focus on backend development and systems.
+              I build practical software that’s reliable, fast, and cleanly engineered.
+            </p>
+
+            <p class="mt-3">
+              Strengths: Algorithms, Data Structures, Performance Optimization, Debugging.
+            </p>
+
+            <p class="mt-3">
+              <strong>Seeking full-time software engineering roles (new grad 2026).</strong>
+            </p>
+          </div>
+
           </div>
         </div>
 
@@ -622,10 +620,12 @@
               <h5>2023 – Present</h5>
               <p><em>Alta Vista Technology</em></p>
               <ul>
-                <li>Automated data entry + validation with Python scripts, saving ~20 hours/week.</li>
-                <li>Improved CRM data accuracy and accessibility for internal teams.</li>
-                <li>Built workflow tooling around APIs and internal reporting processes.</li>
+                <li>Managed and configured CRM workflows to automate repetitive tasks and improve internal data accuracy.</li>
+                <li>Used CRM reporting and validation tools to clean inconsistent or duplicate customer records.</li>
+                <li>Assisted with integrating CRM data into downstream financial platforms through pre-built connectors and API-based syncs.</li>
+                <li>Supported troubleshooting for internal users, documenting issues and improving internal technical notes.</li>
               </ul>
+
             </div>
 
             <div class="resume-item">
@@ -633,9 +633,12 @@
               <h5>2024 – Present</h5>
               <p><em>Michigan Build and Launch (University of Michigan)</em></p>
               <ul>
-                <li>Built backend architecture for auth + data storage, focusing on secure API design.</li>
-                <li>Collaborated in a small team using agile iteration and weekly planning.</li>
+                <li>Built modular React components and dynamic page-builder tools for a Weebly-style site creator.</li>
+                <li>Implemented backend logic for user authentication, data persistence, and RESTful API routes.</li>
+                <li>Contributing to architecture planning and sprint execution in a 6-person engineering team.</li>
+                <li>Participated in sprint planning to scope features and break down engineering tasks.</li>
               </ul>
+
             </div>
 
           </div>
@@ -657,32 +660,38 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-cpu"></i></div>
-              <h3>Megatron Chess Engine</h3>
-              <p class="mb-2">
-                UCI-compatible engine with a custom web UI and API-driven move generation.
-              </p>
-              <div class="text-muted small mb-3">C++ • Python • Node/Express • (Redis/Postgres if true)</div>
+              <h3>Chess Engine</h3>
+                <p class="mb-2">C++ / Python / JavaScript / REST API</p>
+                <p class="mb-2">Live Demo: <a href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">megatronchess.com</a></p>
 
-              <div class="d-flex gap-2 flex-wrap">
-                <a class="btn btn-sm btn-primary" href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                <a class="btn btn-sm btn-outline-secondary" href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <ul class="mb-3">
+                  <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
+                  <li>Built engine logic in Python, including game state handling, search routines, and evaluation functions.</li>
+                  <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations using HTML/CSS.</li>
+                  <li>Integrated the frontend with a Python backend through a REST API that exchanged JSON move data.</li>
+                  <li>Deployed the full system to Heroku, configuring the backend and frontend for live gameplay.</li>
+                </ul>
+
+                <div class="d-flex gap-2 flex-wrap">
+                  <a class="btn btn-sm btn-primary" href="https://megatronchess.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                  <!-- If allowed, add a GitHub button here -->
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Chores -->
+          <!-- search engine -->
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-envelope-paper"></i></div>
-              <h3>Chore Scheduler Bot</h3>
-              <p class="mb-2">
-                Rotates weekly chores and emails personalized assignments with run-tracking and toggles.
-              </p>
-              <div class="text-muted small mb-3">Python • Scheduling • Email automation</div>
-
-              <div class="d-flex gap-2 flex-wrap">
-                <a class="btn btn-sm btn-outline-secondary" href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
+              <h3>Distributed Search Engine (MapReduce)</h3>
+                <p class="mb-2">Python</p>
+                <ul class="mb-3">
+                  <li>Implemented Map, Shuffle, and Reduce phases to process thousands of documents.</li>
+                  <li>Built an inverted index, tokenization pipeline, and ranked retrieval API.</li>
+                  <li>Optimized worker scheduling to reduce total processing time.</li>
+                </ul>
+                <div class="text-muted small">Source code not public (course project).</div>
             </div>
           </div>
 
@@ -706,15 +715,14 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-layers"></i></div>
-              <h3>LC2K Assembler + Linker</h3>
-              <p class="mb-2">
-                Full assembler/linker toolchain: symbol resolution, relocation, and memory layout.
-              </p>
-              <div class="text-muted small mb-3">C • Systems • Tooling</div>
-
-              <div class="d-flex gap-2 flex-wrap">
-                <a class="btn btn-sm btn-outline-secondary" href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
+              <h3>Music Review App (In Progress)</h3>
+                <p class="mb-2">React / Flask / PostgreSQL</p>
+                <ul class="mb-3">
+                  <li>Designing a full-stack web application where users log albums, rate music, and follow friends.</li>
+                  <li>Implementing user authentication, profile pages, album logging workflows, and a scalable PostgreSQL schema.</li>
+                  <li>Building REST API routes for reviews, album search, and personalized recommendations.</li>
+                  <li>Building a personalized recommender using vector-based similarity between user listening profiles.</li>
+                </ul>
             </div>
           </div>
 
@@ -738,15 +746,13 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-cash-coin"></i></div>
-              <h3>Poker Bot</h3>
-              <p class="mb-2">
-                Rule-based heads-up poker bot with hand evaluation and betting logic.
-              </p>
-              <div class="text-muted small mb-3">Python • Game logic • Simulation</div>
-
-              <div class="d-flex gap-2 flex-wrap">
-                <a class="btn btn-sm btn-outline-secondary" href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
+              <h3>Chore Director</h3>
+              <p class="mb-2">Python</p>
+              <ul class="mb-3">
+                <li>Automated weekly chore assignments with a Python script that emailed tasks using SMTP.</li>
+                <li>Tracked and updated rotation state using a local index file with modular arithmetic.</li>
+                <li>Scheduled the script on macOS with a cron job for fully automated operation.</li>
+              </ul>
             </div>
           </div>
 
@@ -758,7 +764,7 @@
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Best way to reach me is email. I’m open to internships and engineering roles.</p>
+        <p>Best way to reach me is email. I’m open to full-time software engineering roles</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
