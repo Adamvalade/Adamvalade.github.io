@@ -232,89 +232,87 @@
         <p>Selected projects that show how I build and ship real software.</p>
       </div> -->
 
-      <div class="container">
-        <div class="row gy-4">
+     <div class="container section-title" data-aos="fade-up">
+  <h2>Projects</h2>
+  <p>Selected projects that show how I build and ship real software.</p>
+</div>
 
-          <!-- Chess -->
-          <section id="projects" class="services section">
-          <div class="container section-title" data-aos="fade-up">
-            <h2>Projects</h2>
-            <p>Selected projects that show how I build and ship real software.</p>
-          </div>
+<div class="container">
+  <div class="row g-4">
 
-          <div class="container">
-            <div class="row g-4">
+    <!-- Chess Engine -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-item h-100 d-flex flex-column position-relative">
+        <div class="icon"><i class="bi bi-cpu"></i></div>
 
-              <!-- Chess Engine -->
-              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item h-100 position-relative">
-                  <div class="icon"><i class="bi bi-cpu"></i></div>
-                  <h3>Chess Engine</h3>
-                  <p class="mb-2"><strong>C++ / Python / JavaScript / REST API</strong></p>
-                  <ul class="mb-3">
-                    <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
-                    <li>Built engine logic in Python, including game state handling, search routines, and evaluation functions.</li>
-                    <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations using HTML/CSS.</li>
-                    <li>Integrated a Node.js backend with a Python chess engine using JSON-based REST communication.</li>
-                    <li>Deployed the full system to Heroku, configuring the backend and frontend for live gameplay.</li>
-                  </ul>
-                  <div class="d-flex gap-2">
-                    <a class="btn btn-sm btn-primary"
-                      href="https://megatronchess.com"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      Live Demo
-                    </a>
+        <h3>Chess Engine</h3>
+        <p class="mb-2"><strong>C++ / Python / JavaScript / REST API</strong></p>
 
-                    <a class="btn btn-sm btn-outline-primary"
-                      href="https://github.com/Adamvalade/megatron-chess"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <ul class="mb-3">
+          <li>Implemented optimized C++ move generation using bitboards, exposed to Python via ctypes.</li>
+          <li>Built Python engine logic for game state handling, search, and evaluation.</li>
+          <li>Developed a JavaScript frontend with draggable pieces, move validation, and animations.</li>
+          <li>Integrated a Node.js REST API with the Python engine using JSON-based communication.</li>
+          <li>Deployed the full system to Heroku for live gameplay.</li>
+        </ul>
 
+        <div class="mt-auto d-flex gap-2">
+          <a class="btn btn-sm btn-primary"
+             href="https://megatronchess.com"
+             target="_blank"
+             rel="noopener noreferrer">
+            Live Demo
+          </a>
 
-
-          <!-- search engine -->
-      
-
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item h-100 position-relative">
-          <div class="icon"><i class="bi bi-music-note-beamed"></i></div>
-          <h3>Music Review App (In Progress)</h3>
-          <p class="mb-2"><strong>React / Flask / PostgreSQL</strong></p>
-          <ul class="mb-3">
-            <li>Designing a full-stack web application where users log albums, rate music, and follow friends.</li>
-            <li>Implementing user authentication, profile pages, album logging workflows, and a scalable PostgreSQL schema.</li>
-            <li>Building REST API routes for reviews, album search, and personalized recommendations.</li>
-            <li>Building a personalized recommender using vector-based similarity between user listening profiles.</li>
-          </ul>
+          <a class="btn btn-sm btn-outline-primary"
+             href="https://github.com/Adamvalade/megatron-chess"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub
+          </a>
         </div>
       </div>
+    </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item h-100 position-relative">
-          <div class="icon"><i class="bi bi-diagram-3"></i></div>
-          <h3>Distributed Search Engine (MapReduce)</h3>
-          <p class="mb-2"><strong>Python</strong></p>
-          <ul class="mb-3">
-            <li>Implemented Map, Shuffle, and Reduce phases to process thousands of documents.</li>
-            <li>Built an inverted index, tokenization pipeline, and ranked retrieval API.</li>
-            <li>Optimized worker scheduling to reduce total processing time.</li>
-          </ul>
-          <div class="text-muted small">Source code not public (course project).</div>
+    <!-- Music Review App -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-item h-100 d-flex flex-column position-relative">
+        <div class="icon"><i class="bi bi-music-note-beamed"></i></div>
+
+        <h3>Music Review App <span class="text-muted">(In Progress)</span></h3>
+        <p class="mb-2"><strong>React / Flask / PostgreSQL</strong></p>
+
+        <ul class="mb-0">
+          <li>Designing a full-stack app for logging albums, rating music, and following users.</li>
+          <li>Implementing authentication, profiles, album workflows, and a scalable PostgreSQL schema.</li>
+          <li>Building REST API routes for reviews, search, and recommendations.</li>
+          <li>Developing a recommender using vector-based similarity between listening profiles.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Distributed Search Engine -->
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-item h-100 d-flex flex-column position-relative">
+        <div class="icon"><i class="bi bi-diagram-3"></i></div>
+
+        <h3>Distributed Search Engine (MapReduce)</h3>
+        <p class="mb-2"><strong>Python</strong></p>
+
+        <ul class="mb-3">
+          <li>Implemented Map, Shuffle, and Reduce phases to process thousands of documents.</li>
+          <li>Built an inverted index, tokenization pipeline, and ranked retrieval API.</li>
+          <li>Optimized worker scheduling to reduce total processing time.</li>
+        </ul>
+
+        <div class="mt-auto text-muted small">
+          Source code not public (course project).
         </div>
       </div>
+    </div>
 
-
-        </div>
-      </div>
-    </section>
-
+  </div>
+</div>
     <!-- CONTACT -->
     <section id="contact" class="contact section">
       <div class="container section-title" data-aos="fade-up">
