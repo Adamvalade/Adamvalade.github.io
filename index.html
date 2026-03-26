@@ -244,7 +244,7 @@
 
         <div class="d-flex align-items-center gap-2 mb-2">
           <div class="icon m-0"><i class="bi bi-headphones"></i></div>
-          <h3 class="m-0">Music Review App — React / Flask / PostgreSQL</h3>
+          <h3 class="m-0">Music Review App</h3>
         </div>
         <p class="mb-2"><strong>Python</strong></p>
         <ul class="mb-3">
@@ -311,28 +311,29 @@
 
         <div class="d-flex align-items-center gap-2 mb-2">
           <div class="icon m-1"><i class="bi bi-server"></i></div>
-          <h3 class="m-0">ForgeQueue - Distributed Job Queue (Python / Redis / Docker / REST)</h3>
+          <h3 class="m-0">ForgeQueue - Distributed Job Queue</h3>
         </div>
+
+        <p class="mb-2"><strong>Python / Redis / Docker / REST </strong></p>
+
+        <ul class="mb-3">
+          <li>Built a Redis-backed distributed job queue with worker leasing/heartbeats, crash recovery, and explicit at-least-once delivery semantics (no lost jobs).</li>
+          <li>Implemented retry orchestration with exponential backoff + delayed scheduling (Redis sorted sets), including DLQ transitions and DLQ-driven requeue.</li>
+          <li>Designed idempotency + deduplication (idempotency keys and content-based dedup) plus per-job processing locks to prevent duplicate concurrent execution.</li>
+          <li>Exposed REST APIs for job submission, status polling, health/readiness, and operational metrics (Prometheus-style counters + duration histograms).</li>
+          <li>Added a brute-force reliability test matrix (worker death mid-claim, heartbeat/reclaim, DLQ exhaustion/retry, concurrency/dedup races) and containerized everything with Docker Compose for reproducible validation.</li>
+        </ul>
+
 
          <div class="d-flex gap-2">
           <a class="btn btn-sm btn-outline-primary"
-             href="https://github.com/Adamvalade/megatron-chess"
+             href="https://github.com/Adamvalade/forgequeue"
              target="_blank"
              rel="noopener noreferrer">
             GitHub
           </a>
         </div>
 
-        <p class="mb-2"><strong>React / Flask / PostgreSQL</strong></p>
-
-        <ul class="mb-3">
-          <li>Built a Redis-backed distributed job queue with at-least-once delivery guarantees.</li>
-          <li>Implemented worker execution with retries, exponential backoff, delayed scheduling, and terminal failure states.</li>
-          <li>Designed idempotent execution semantics to safely handle retries and worker restarts.</li>
-          <li>Exposed REST APIs for job submission, status polling, and system metrics.</li>
-          <li>Used Redis sorted sets to schedule delayed retries without blocking workers or causing head-of-line delays.</li>
-          <li>Containerized the system with Docker Compose for reproducible local deployment.</li>
-        </ul>
       </div>
     </div>
 
