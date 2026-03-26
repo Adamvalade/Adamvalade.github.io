@@ -246,7 +246,7 @@
           <div class="icon m-0"><i class="bi bi-headphones"></i></div>
           <h3 class="m-0">Music Review App</h3>
         </div>
-        <p class="mb-2"><strong>Python</strong></p>
+        <p class="mb-2"><strong>TypeScript / Python / PostgreSQL / Redis / REST API / Docker</strong></p>
         <ul class="mb-3">
           <li>Built a production-style full-stack music logging and social platform with authentication, reviews, lists, and social features</li>
           <li>Designed RESTful APIs using FastAPI and async SQLAlchemy with JWT-based auth and rate limiting</li>
@@ -317,13 +317,10 @@
         <p class="mb-2"><strong>Python / Redis / Docker / REST </strong></p>
 
         <ul class="mb-3">
-          <li>Built a Redis-backed distributed job queue with worker leasing/heartbeats, crash recovery, and explicit at-least-once delivery semantics (no lost jobs).</li>
-          <li>Implemented retry orchestration with exponential backoff + delayed scheduling (Redis sorted sets), including DLQ transitions and DLQ-driven requeue.</li>
-          <li>Designed idempotency + deduplication (idempotency keys and content-based dedup) plus per-job processing locks to prevent duplicate concurrent execution.</li>
-          <li>Exposed REST APIs for job submission, status polling, health/readiness, and operational metrics (Prometheus-style counters + duration histograms).</li>
-          <li>Added a brute-force reliability test matrix (worker death mid-claim, heartbeat/reclaim, DLQ exhaustion/retry, concurrency/dedup races) and containerized everything with Docker Compose for reproducible validation.</li>
+          <li>Built a Redis-backed distributed job queue with at-least-once delivery, worker leasing, and crash recovery (no lost jobs).</li>
+          <li>Implemented retries with exponential backoff, delayed scheduling (Redis ZSET), and DLQ handling with requeue support.</li>
+          <li>Designed idempotency, deduplication, and per-job locking; exposed REST APIs with metrics and containerized via Docker.</li>
         </ul>
-
 
          <div class="d-flex gap-2">
           <a class="btn btn-sm btn-outline-primary"
