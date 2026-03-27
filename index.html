@@ -100,6 +100,115 @@
       </div>
     </section>
 
+    <section id="Projects" class="services section" data-aos="fade-up">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>Selected projects that show how I build and ship real software.</p>
+      </div> 
+      <div class="container">
+      <div class="row g-5">
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item h-100 position-relative">
+
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="icon m-0"><i class="bi bi-headphones"></i></div>
+              <h3 class="m-0">Music Review App</h3>
+            </div>
+            <p class="mb-2"><strong>TypeScript / Python / PostgreSQL / Redis / REST API / Docker</strong></p>
+            <ul class="mb-3">
+              <li>Built a production-style full-stack music logging and social platform with authentication, reviews, lists, and social features</li>
+              <li>Designed RESTful APIs using FastAPI and async SQLAlchemy with JWT-based auth and rate limiting</li>
+              <li>Developed a responsive Next.js frontend (App Router) with dynamic pages for discovery, albums, ratings, and user libraries</li>
+              <li>Deployed a multi-service architecture with Docker Compose (PostgreSQL, Redis, API, frontend)</li>
+            </ul>
+            <div class="d-flex gap-2">
+              <a class="btn btn-sm btn-primary"
+                href="https://cadencemusik.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                Live Demo
+              </a>
+
+              <a class="btn btn-sm btn-outline-primary"
+                href="https://github.com/Adamvalade/Cadence"
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chess Engine -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item h-100 position-relative">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="icon m-0"><i class="bi bi-terminal"></i></div>
+              <h3 class="m-0">Chess Engine</h3>
+            </div>
+            <p class="mb-2"><strong>C++ / Python / JavaScript / REST API</strong></p>
+            <ul class="mb-3">
+              <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
+              <li>Built Python engine logic for game state handling, search routines, and evaluation.</li>
+              <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations.</li>
+              <li>Integrated a Node.js REST API with the Python engine using JSON-based communication.</li>
+              <li>Deployed to Heroku with production-ready backend and frontend configuration.</li>
+            </ul>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-sm btn-primary"
+                href="https://megatronchess.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                Live Demo
+              </a>
+
+              <a class="btn btn-sm btn-outline-primary"
+                href="https://github.com/Adamvalade/megatron-chess"
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ForgeQueue -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item h-100 position-relative">
+
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="icon m-1"><i class="bi bi-server"></i></div>
+              <h3 class="m-0">ForgeQueue - Distributed Job Queue</h3>
+            </div>
+
+            <p class="mb-2"><strong>Python / Redis / Docker / REST </strong></p>
+
+            <ul class="mb-3">
+              <li>Built a Redis-backed distributed job queue with at-least-once delivery, worker leasing, and crash recovery (no lost jobs).</li>
+              <li>Implemented retries with exponential backoff, delayed scheduling (Redis ZSET), and DLQ handling with requeue support.</li>
+              <li>Designed idempotency, deduplication, and per-job locking; exposed REST APIs with metrics and containerized via Docker.</li>
+            </ul>
+
+            <div class="d-flex gap-2">
+              <a class="btn btn-sm btn-outline-primary"
+                href="https://github.com/Adamvalade/forgequeue"
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    </section> 
+
     <!-- ABOUT -->
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -121,15 +230,10 @@
            <div class="skills-content mt-4">
             <h5 class="mb-3">Core Skills</h5>
 
-           <ul class="list-unstyled text-muted">
-            <li class="mb-2"><strong>Languages:</strong> C++, Python, JavaScript/TypeScript, SQL, Bash</li>
-            <li class="mb-2"><strong>Backend:</strong> Node.js, Express, Flask, REST APIs</li>
-            <li class="mb-2"><strong>Frontend:</strong> React, HTML, CSS, Tailwind, DOM manipulation</li>
-            <li class="mb-2"><strong>Databases:</strong> PostgreSQL, MongoDB, Redis</li>
-            <li class="mb-2"><strong>DevOps/Tools:</strong> Git, Docker, Heroku, AWS, Postman</li>
-            <li class="mb-2"><strong>Strengths:</strong> Algorithms, Data Structures, Performance Optimization, Debugging</li>
-          </ul>
-
+            <p class="text-muted mb-1"><strong>Languages:</strong> C++, Python, TypeScript</p>
+            <p class="text-muted mb-1"><strong>Backend:</strong> Node.js, Flask, REST APIs</p>
+            <p class="text-muted mb-1"><strong>Frontend:</strong> React, Next.js</p>
+            <p class="text-muted mb-1"><strong>Databases:</strong> PostgreSQL, Redis</p>
           </div>
 
           </div>
@@ -138,15 +242,15 @@
             <div class="about-me">
              <h4>About Me</h4>
               <p>
-                I’m a Computer Science student at the University of Michigan (B.S. Computer Science, expected 2026).
+                I’m a Computer Science student at the University of Michigan focused on building real-world software.
               </p>
 
               <p class="mt-3">
-                Strengths: Algorithms, Data Structures, Performance Optimization, Debugging.
+                I enjoy working across the stack — from backend systems to user-facing applications.
               </p>
 
               <p class="mt-3">
-                <strong>Seeking Summer 2026 Software Engineering Internship opportunities.</strong>
+                <strong>Currently seeking Summer 2026 software engineering internships.</strong>
               </p>
             </div>
 
@@ -155,195 +259,9 @@
 
       </div>
     </section>
-        <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Education, experience, and technical background.</p>
-        <div class="mt-3">
-          <a href="assets/Adam_Valade_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            Download Resume (PDF)
-          </a>
-        </div>
-      </div>
+  
 
-      <div class="container">
-        <div class="row">
-
-          <!-- LEFT COLUMN -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>University of Michigan</h4>
-              <h5>BS Computer Science • 2022 – 2026 (Expected)</h5>
-              <p class="mb-0">
-                Relevant coursework: Data Structures & Algorithms, Computer Architecture, Database Managment Systems, Web Systems
-              </p>
-            </div>
-
-            <h3 class="resume-title mt-4">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Adam Valade</h4>
-              <p class="mb-2">
-                <em>Software engineer who builds practical products, owns the details, and debugs hard problems.</em>
-              </p>
-              <ul class="mb-0">
-                <li><a href="mailto:advalade@umich.edu">advalade@umich.edu</a></li>
-                <li><a href="tel:+12484035657">(248) 403-5657</a></li>
-                <li><a href="https://github.com/Adamvalade" target="_blank" rel="noopener noreferrer">github.com/Adamvalade</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- RIGHT COLUMN -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Experience</h3>
-
-            <div class="resume-item">
-              <h4>Developer</h4>
-              <h5>2024 – Present</h5>
-              <p><em>Michigan Build and Launch (University of Michigan)</em></p>
-              <ul>
-                <li>Built modular React components and dynamic page-builder tools for a Weebly-style site creator.</li>
-                <li>Implemented backend logic for user authentication, data persistence, and RESTful API routes.</li>
-                <li>Contributing to architecture planning and sprint execution in a 6-person engineering team.</li>
-                <li>Participated in sprint planning to scope features and break down engineering tasks.</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Data Operations Intern</h4>
-              <h5>2023 – Present</h5>
-              <p><em>Alta Vista Technology</em></p>
-              <ul>
-                <li>Managed and configured CRM workflows to automate repetitive tasks and improve internal data accuracy.</li>
-                <li>Used CRM reporting and validation tools to clean inconsistent or duplicate customer records.</li>
-                <li>Assisted with integrating CRM data into downstream financial platforms through pre-built connectors and API-based syncs.</li>
-                <li>Supported troubleshooting for internal users, documenting issues and improving internal technical notes.</li>
-              </ul>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-<section id="Projects" class="services section" data-aos="fade-up">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Selected projects that show how I build and ship real software.</p>
-      </div> 
-
-    <!-- <div class="container section-title" data-aos="fade-up">
-  <h2>Projects</h2>
-  <p>Selected projects that show how I build and ship real software.</p>
-</div> -->
-
-<div class="container">
-  <div class="row g-5">
-
-     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-      <div class="service-item h-100 position-relative">
-
-        <div class="d-flex align-items-center gap-2 mb-2">
-          <div class="icon m-0"><i class="bi bi-headphones"></i></div>
-          <h3 class="m-0">Music Review App</h3>
-        </div>
-        <p class="mb-2"><strong>TypeScript / Python / PostgreSQL / Redis / REST API / Docker</strong></p>
-        <ul class="mb-3">
-          <li>Built a production-style full-stack music logging and social platform with authentication, reviews, lists, and social features</li>
-          <li>Designed RESTful APIs using FastAPI and async SQLAlchemy with JWT-based auth and rate limiting</li>
-          <li>Developed a responsive Next.js frontend (App Router) with dynamic pages for discovery, albums, ratings, and user libraries</li>
-          <li>Deployed a multi-service architecture with Docker Compose (PostgreSQL, Redis, API, frontend)</li>
-        </ul>
-         <div class="d-flex gap-2">
-          <a class="btn btn-sm btn-primary"
-             href="https://cadencemusik.com"
-             target="_blank"
-             rel="noopener noreferrer">
-            Live Demo
-          </a>
-
-          <a class="btn btn-sm btn-outline-primary"
-             href="https://github.com/Adamvalade/Cadence"
-             target="_blank"
-             rel="noopener noreferrer">
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chess Engine -->
-    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-      <div class="service-item h-100 position-relative">
-        <div class="d-flex align-items-center gap-2 mb-2">
-          <div class="icon m-0"><i class="bi bi-terminal"></i></div>
-          <h3 class="m-0">Chess Engine</h3>
-        </div>
-        <p class="mb-2"><strong>C++ / Python / JavaScript / REST API</strong></p>
-        <ul class="mb-3">
-          <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
-          <li>Built Python engine logic for game state handling, search routines, and evaluation.</li>
-          <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations.</li>
-          <li>Integrated a Node.js REST API with the Python engine using JSON-based communication.</li>
-          <li>Deployed to Heroku with production-ready backend and frontend configuration.</li>
-        </ul>
-
-        <div class="d-flex gap-2">
-          <a class="btn btn-sm btn-primary"
-             href="https://megatronchess.com"
-             target="_blank"
-             rel="noopener noreferrer">
-            Live Demo
-          </a>
-
-          <a class="btn btn-sm btn-outline-primary"
-             href="https://github.com/Adamvalade/megatron-chess"
-             target="_blank"
-             rel="noopener noreferrer">
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ForgeQueue -->
-    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-      <div class="service-item h-100 position-relative">
-
-        <div class="d-flex align-items-center gap-2 mb-2">
-          <div class="icon m-1"><i class="bi bi-server"></i></div>
-          <h3 class="m-0">ForgeQueue - Distributed Job Queue</h3>
-        </div>
-
-        <p class="mb-2"><strong>Python / Redis / Docker / REST </strong></p>
-
-        <ul class="mb-3">
-          <li>Built a Redis-backed distributed job queue with at-least-once delivery, worker leasing, and crash recovery (no lost jobs).</li>
-          <li>Implemented retries with exponential backoff, delayed scheduling (Redis ZSET), and DLQ handling with requeue support.</li>
-          <li>Designed idempotency, deduplication, and per-job locking; exposed REST APIs with metrics and containerized via Docker.</li>
-        </ul>
-
-         <div class="d-flex gap-2">
-          <a class="btn btn-sm btn-outline-primary"
-             href="https://github.com/Adamvalade/forgequeue"
-             target="_blank"
-             rel="noopener noreferrer">
-            GitHub
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Music Review App-->
-
-  </div>
-</div>
-</section> 
-<!-- added -->
+  
   </div>
 </div>
     <!-- CONTACT -->
