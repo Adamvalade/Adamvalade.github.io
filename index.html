@@ -49,12 +49,10 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
 
   <main class="main">
-
     <!-- HERO (your updated section) -->
     <section id="hero" class="hero section dark-background">
       <img src="assets/img/hero-img.jpg" alt="Hero background" data-aos="fade-in">
@@ -98,7 +96,6 @@
 
       </div>
     </section>
-
     <section id="Projects" class="services section" data-aos="fade-up">
       <div class="container section-title" data-aos="fade-up">
         <h2>Projects</h2>
@@ -112,14 +109,14 @@
 
             <div class="d-flex align-items-center gap-2 mb-2">
               <div class="icon m-0"><i class="bi bi-headphones"></i></div>
-              <h3 class="m-0">Music Review App</h3>
+              <h3 class="m-0">Cadence — Music Social App</h3>
             </div>
-            <p class="mb-2"><strong>TypeScript / Python / PostgreSQL / Redis / REST API / Docker</strong></p>
+            <p class="mb-2"><strong>TypeScript / Python / PostgreSQL / Redis / Docker</strong></p>
+            <p class="mb-2">A full-stack platform for reviewing albums, building lists, and exploring music socially.</p>
             <ul class="mb-3">
-              <li>Built a production-style full-stack music logging and social platform with authentication, reviews, lists, and social features</li>
-              <li>Designed RESTful APIs using FastAPI and async SQLAlchemy with JWT-based auth and rate limiting</li>
-              <li>Developed a responsive Next.js frontend (App Router) with dynamic pages for discovery, albums, ratings, and user libraries</li>
-              <li>Deployed a multi-service architecture with Docker Compose (PostgreSQL, Redis, API, frontend)</li>
+               <li>Built FastAPI + PostgreSQL backend with auth, rate limiting, and async database access.</li>
+              <li>Developed responsive Next.js frontend with album pages, reviews, ratings, and user libraries.</li>
+              <li>Deployed as a multi-service app with PostgreSQL, Redis, API, and frontend containers.</li>
             </ul>
             <div class="d-flex gap-2">
               <a class="btn btn-sm btn-primary"
@@ -144,15 +141,14 @@
           <div class="service-item h-100 position-relative">
             <div class="d-flex align-items-center gap-2 mb-2">
               <div class="icon m-0"><i class="bi bi-terminal"></i></div>
-              <h3 class="m-0">Chess Engine</h3>
+              <h3 class="m-0">Megatron Chess — Chess Engine</h3>
             </div>
             <p class="mb-2"><strong>C++ / Python / JavaScript / REST API</strong></p>
+            <p class="mb-2">A playable web chess app backed by a custom engine with C++ move generation.</p>
             <ul class="mb-3">
-              <li>Implemented optimized move generation in C++ using bitboards, exposed to Python via ctypes bindings.</li>
-              <li>Built Python engine logic for game state handling, search routines, and evaluation.</li>
-              <li>Developed a JavaScript frontend with draggable pieces, move validation, and board animations.</li>
-              <li>Integrated a Node.js REST API with the Python engine using JSON-based communication.</li>
-              <li>Deployed to Heroku with production-ready backend and frontend configuration.</li>
+              <li>Implemented move generation in C++ with bitboards and exposed it to Python via ctypes.</li>
+              <li>Built engine-side search, evaluation, and game-state handling in Python.</li>
+              <li>Integrated a JavaScript frontend and Node API to support live browser play.</li>
             </ul>
 
             <div class="d-flex gap-2">
@@ -183,11 +179,12 @@
             </div>
 
             <p class="mb-2"><strong>Python / Redis / Docker / REST </strong></p>
+            <p class="mb-2">A Redis-backed queueing system for reliable background job processing.</p>
 
             <ul class="mb-3">
-              <li>Built a Redis-backed distributed job queue with at-least-once delivery, worker leasing, and crash recovery (no lost jobs).</li>
-              <li>Implemented retries with exponential backoff, delayed scheduling (Redis ZSET), and DLQ handling with requeue support.</li>
-              <li>Designed idempotency, deduplication, and per-job locking; exposed REST APIs with metrics and containerized via Docker.</li>
+              <li>Implemented at-least-once delivery, worker leasing, and crash recovery.</li>
+              <li>Added retries, delayed scheduling, exponential backoff, and dead-letter queue handling.</li>
+              <li>Designed idempotency, deduplication, locking, and REST APIs for queue operations.</li>
             </ul>
 
             <div class="d-flex gap-2">
@@ -198,12 +195,8 @@
                 GitHub
               </a>
             </div>
-
           </div>
         </div>
-
-
-
       </div>
     </div>
     </section> 
@@ -227,25 +220,24 @@
 
             <!-- Replace percent bars with credible grouping -->
            <div class="skills-content mt-4">
-            <h5 class="mb-3">Core Skills</h5>
-
-            <p class="text-muted mb-1"><strong>Languages:</strong> C++, Python, TypeScript</p>
-            <p class="text-muted mb-1"><strong>Backend:</strong> Node.js, Flask, REST APIs</p>
-            <p class="text-muted mb-1"><strong>Frontend:</strong> React, Next.js</p>
-            <p class="text-muted mb-1"><strong>Databases:</strong> PostgreSQL, Redis</p>
-          </div>
+              <h5 class="mb-3">Core Skills</h5>
+              <p class="text-muted mb-2"><strong>Languages:</strong> C++, Python, TypeScript</p>
+              <p class="text-muted mb-2"><strong>Frameworks:</strong> React, Next.js, Flask</p>
+              <p class="text-muted mb-2"><strong>Backend:</strong> REST APIs, PostgreSQL, Redis</p>
+              <p class="text-muted mb-2"><strong>Tools:</strong> Git, Docker</p>
+            </div>
 
           </div>
 
           <div class="col-md-6">
             <div class="about-me">
              <h4>About Me</h4>
-              <p>
+             <p>
                 I’m a Computer Science student at the University of Michigan focused on building real-world software.
               </p>
 
               <p class="mt-3">
-                I enjoy working across the stack — from backend systems to user-facing applications.
+                I like working across the stack, especially on backend systems, APIs, and full-stack products.
               </p>
 
               <p class="mt-3">
