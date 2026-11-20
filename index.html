@@ -3,27 +3,556 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a30">
   <title>Adam Valade | Software Engineer</title>
-  <meta name="description" content="Adam Valade — University of Michigan Computer Science. C++ systems, backend engineering, and full-stack applications.">
+  <meta name="description" content="Adam Valade is a University of Michigan CS student building a C++ chess engine, a fault-tolerant job queue, and full-stack applications. December 2026 graduate seeking software engineering roles.">
   <meta property="og:title" content="Adam Valade | Software Engineer">
-  <meta property="og:description" content="C++ systems, backend engineering, and full-stack projects by Adam Valade.">
+  <meta property="og:description" content="C++ chess search, reliable backend systems, and full-stack software.">
   <meta property="og:type" content="website">
 
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --portfolio-ink: #122039;
+      --portfolio-muted: #586477;
+      --portfolio-blue: #1267dd;
+      --portfolio-border: #dce4ed;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, sans-serif; }
+    .navmenu a, .site-name { font-weight: 600; }
+
+    .portfolio-hero {
+      isolation: isolate;
+      min-height: 76vh;
+      background: #0e2038;
+      overflow: hidden;
+    }
+
+    .portfolio-hero > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .20;
+      z-index: -2;
+    }
+
+    .portfolio-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(8,20,40,.95), rgba(12,44,74,.75));
+      z-index: -1;
+    }
+
+    .portfolio-hero .container {
+      position: relative;
+      z-index: 1;
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+
+    .hero-kicker {
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #b9d6ff;
+    }
+
+    .portfolio-hero h2 {
+      font-weight: 800;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -.055em;
+      margin: 16px 0 0;
+      color: white;
+    }
+
+    .hero-statement {
+      font-size: clamp(1.25rem, 2.25vw, 1.9rem);
+      line-height: 1.32;
+      font-weight: 600;
+      max-width: 760px;
+      color: #eff6ff;
+      margin: 24px auto 12px;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      color: #d0dded;
+      line-height: 1.75;
+      font-size: 1.025rem;
+      margin: 0 auto 25px;
+    }
+
+    .portfolio-hero .btn {
+      border-radius: 12px;
+      font-weight: 700;
+      padding: 12px 20px;
+    }
+
+    .hero-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .hero-socials a:hover {
+      background: rgba(255,255,255,.18);
+      transform: translateY(-2px);
+    }
+
+    .portfolio-section {
+      padding: 82px 0;
+      scroll-margin-top: 70px;
+    }
+
+    .portfolio-section-heading {
+      text-align: center;
+      max-width: 690px;
+      margin: 0 auto 36px;
+    }
+
+    .portfolio-section-heading h2 {
+      color: var(--portfolio-ink);
+      font-weight: 800;
+      letter-spacing: -.045em;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin: 0 0 10px;
+    }
+
+    .portfolio-section-heading p {
+      color: var(--portfolio-muted);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    #projects { background: #f5f8fc; }
+
+    .project-card {
+      height: 100%;
+      background: white;
+      border: 1px solid var(--portfolio-border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 7px 25px rgba(15,35,65,.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(15,35,65,.12);
+    }
+
+    .project-art {
+      position: relative;
+      height: 214px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .project-art::after {
+      content: "Illustration";
+      position: absolute;
+      bottom: 11px;
+      right: 15px;
+      font-size: .65rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .65;
+    }
+
+    /* CHESS ART */
+
+    .art-chess {
+      background: radial-gradient(circle at 75% 5%, #34567a, #0b1b2d 65%);
+      color: #d6e7ff;
+    }
+
+    .art-chess::after { color: #c3d6e9; }
+
+    .chess-board {
+      width: 170px;
+      height: 170px;
+      flex: 0 0 170px;
+      position: relative;
+      border: 5px solid #c9d7e6;
+      border-radius: 3px;
+      box-shadow: 0 12px 25px rgba(0,0,0,.28);
+      background: conic-gradient(
+        #456c80 25%,
+        #dfe5d9 0 50%,
+        #456c80 0 75%,
+        #dfe5d9 0
+      ) 0 0 / 25% 25%;
+    }
+
+    .chess-piece {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 26px;
+      line-height: 1;
+      color: #101b28;
+      text-shadow: 0 1px rgba(255,255,255,.55);
+    }
+
+    .chess-piece.light {
+      color: #fcfaf3;
+      text-shadow: 0 2px 2px #0d1721, 0 0 1px #0d1721;
+    }
+
+    .engine-label {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: .83rem;
+    }
+
+    .engine-label strong {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .engine-label span { color: #b9d1e9; }
+    .engine-label code { color: #9ce6ae; font-size: .8rem; }
+
+    /* DISTRIBUTED QUEUE ART */
+
+    .art-queue {
+      background: radial-gradient(circle at 10% 10%, #184d62, #0d2635 75%);
+      color: white;
+      flex-direction: column;
+    }
+
+    .queue-pipeline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+    }
+
+    .queue-node {
+      min-width: 76px;
+      padding: 13px 9px;
+      border: 1px solid rgba(211,236,255,.45);
+      border-radius: 11px;
+      background: rgba(255,255,255,.10);
+      text-align: center;
+    }
+
+    .queue-node i {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+      color: #8ef1db;
+    }
+
+    .queue-node span {
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .queue-arrow {
+      color: #7de8d4;
+      font-size: 1.2rem;
+    }
+
+    .queue-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .queue-features span {
+      border: 1px solid rgba(157,232,218,.4);
+      border-radius: 20px;
+      padding: 5px 9px;
+      color: #d5fff6;
+      font-size: .73rem;
+    }
+
+    /* MUSIC APP ART */
+
+    .art-cadence {
+      background: linear-gradient(125deg, #26184b, #523778 56%, #aa568c);
+    }
+
+    .music-window {
+      width: min(100%, 295px);
+      background: rgba(22,15,43,.80);
+      border: 1px solid rgba(255,255,255,.24);
+      padding: 12px;
+      border-radius: 14px;
+      box-shadow: 0 15px 32px rgba(15,9,28,.28);
+      color: white;
+    }
+
+    .music-window-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      padding-bottom: 10px;
+    }
+
+    .music-window-title span {
+      font-size: .72rem;
+      font-weight: 500;
+      color: #e9c9ff;
+    }
+
+    .music-albums {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .music-album {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      color: rgba(255,255,255,.85);
+      font-size: 1.7rem;
+    }
+
+    .music-album:nth-child(1) {
+      background: linear-gradient(145deg, #ffc49e, #a95a73);
+    }
+
+    .music-album:nth-child(2) {
+      background: linear-gradient(145deg, #73c1d3, #4259a8);
+    }
+
+    .music-album:nth-child(3) {
+      background: linear-gradient(145deg, #ed8ec9, #7946c3);
+    }
+
+    .music-footer {
+      font-size: .73rem;
+      color: #ead9ff;
+      margin-top: 10px;
+    }
+
+    /* PROJECT CARDS */
+
+    .project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .project-type {
+      color: var(--portfolio-blue);
+      font-size: .73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      margin-bottom: 8px;
+    }
+
+    .project-body h3 {
+      color: var(--portfolio-ink);
+      font-size: 1.35rem;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      margin: 0 0 12px;
+    }
+
+    .project-summary {
+      color: var(--portfolio-muted);
+      line-height: 1.65;
+      margin-bottom: 13px;
+    }
+
+    .project-highlights {
+      padding-left: 19px;
+      color: #38485f;
+      line-height: 1.58;
+      font-size: .93rem;
+      margin: 0 0 17px;
+    }
+
+    .project-highlights li + li { margin-top: 7px; }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 21px;
+    }
+
+    .tech-stack span {
+      border: 1px solid #e0e7ef;
+      color: #3c526c;
+      background: #f5f8fb;
+      font-weight: 600;
+      font-size: .72rem;
+      border-radius: 6px;
+      padding: 5px 8px;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: auto;
+    }
+
+    .project-actions a {
+      border-radius: 9px;
+      font-size: .86rem;
+      font-weight: 700;
+      padding: 9px 12px;
+    }
+
+    /* ABOUT */
+
+    .about-layout {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(18,32,57,.10);
+    }
+
+    .about-copy h2 {
+      font-weight: 800;
+      color: var(--portfolio-ink);
+      letter-spacing: -.04em;
+      margin-bottom: 17px;
+    }
+
+    .about-copy p {
+      color: #4b5b70;
+      line-height: 1.85;
+    }
+
+    .availability {
+      border-left: 3px solid var(--portfolio-blue);
+      padding-left: 13px;
+      color: var(--portfolio-ink) !important;
+      font-weight: 700;
+    }
+
+    /* CONTACT */
+
+    #contact {
+      background: #f5f8fc;
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 15px;
+      border: 1px solid var(--portfolio-border);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      background: white;
+      color: #174778;
+    }
+
+    .contact-links a:hover {
+      border-color: var(--portfolio-blue);
+    }
+
+    .portfolio-footer {
+      text-align: center;
+      color: #66768a;
+      font-size: .85rem;
+      background: #f5f8fc;
+      padding: 12px 0 26px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #7fbcff;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 991px) {
+      .portfolio-hero { min-height: auto; }
+      .portfolio-hero .container {
+        padding-top: 88px;
+        padding-bottom: 78px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .portfolio-section { padding: 60px 0; }
+      .project-art { height: 205px; }
+      .engine-label { margin-left: 12px; }
+      .chess-board {
+        width: 145px;
+        height: 145px;
+        flex-basis: 145px;
+      }
+      .chess-piece { font-size: 22px; }
+      .queue-node {
+        min-width: 65px;
+        padding: 10px 6px;
+      }
+      .queue-pipeline { gap: 5px; }
+      .profile-photo { width: 180px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .project-card, .hero-socials a { transition: none; }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -32,68 +561,75 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center" aria-label="Home">
+      <a href="#hero" class="logo d-flex align-items-center" aria-label="Home">
         <h1 class="sitename">Adam Valade</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" aria-label="Main navigation">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
 
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-hidden="true"></i>
+      </nav>
     </div>
   </header>
 
   <main class="main">
 
     <!-- HERO -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-img.jpg" alt="" data-aos="fade-in">
+    <section id="hero" class="hero section dark-background portfolio-hero">
+      <img src="assets/img/hero-img.jpg" alt="" aria-hidden="true">
 
-      <div class="container d-flex flex-column align-items-center justify-content-center text-center"
-           data-aos="fade-up" data-aos-delay="100">
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center">
+
+        <div class="hero-kicker">
+          University of Michigan &nbsp;·&nbsp; Computer Science &nbsp;·&nbsp; December 2026
+        </div>
 
         <h2>Adam Valade</h2>
 
-        <p class="mb-3">
-          <span class="typed" data-typed-items="Computer Science @ University of Michigan"></span>
+        <p class="hero-statement">
+          I like building the hard parts of software.
         </p>
 
-        <p class="mb-4" style="max-width: 700px;">
-          I build backend systems and full-stack software.
-          My projects include a C++ chess engine, a distributed job queue,
-          and a music discovery platform.
+        <p class="hero-description">
+          A chess engine written in C++, a job queue designed to recover from failures,
+          and a full-stack music app. I work across systems, backend, and web development—and
+          care about how things work under the hood.
         </p>
 
-        <div class="d-flex gap-2 justify-content-center flex-wrap">
-          <a href="#projects" class="btn btn-primary px-4 py-2">
-            View Projects
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="#projects" class="btn btn-primary">
+            Explore projects
+            <i class="bi bi-arrow-down-right ms-1"></i>
           </a>
+
           <a href="assets/Adam_Valade_Resume.pdf"
-             class="btn btn-outline-light px-4 py-2"
-             target="_blank" rel="noopener noreferrer">
-            Resume (PDF)
+             class="btn btn-outline-light"
+             target="_blank"
+             rel="noopener noreferrer">
+            View résumé
+            <i class="bi bi-box-arrow-up-right ms-1"></i>
           </a>
         </div>
 
-        <div class="mt-4 d-flex gap-3 justify-content-center">
+        <div class="hero-socials d-flex gap-3 justify-content-center mt-4">
           <a href="https://github.com/Adamvalade"
              target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="bi bi-github" style="font-size:1.6rem;"></i>
+            <i class="bi bi-github"></i>
           </a>
 
           <a href="https://www.linkedin.com/in/adam-valade-690a25270"
              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="bi bi-linkedin" style="font-size:1.6rem;"></i>
+            <i class="bi bi-linkedin"></i>
           </a>
 
           <a href="mailto:advalade@umich.edu" aria-label="Email">
-            <i class="bi bi-envelope" style="font-size:1.6rem;"></i>
+            <i class="bi bi-envelope"></i>
           </a>
         </div>
 
@@ -101,165 +637,252 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Systems and applications I designed, implemented, and deployed.</p>
-      </div>
-
+    <section id="projects" class="portfolio-section">
       <div class="container">
-        <div class="row g-5">
 
-          <!-- CADENCE -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item h-100 position-relative">
+        <div class="portfolio-section-heading">
+          <h2>Selected projects</h2>
+          <p>
+            Three different engineering problems: search, reliability,
+            and full-stack product development.
+          </p>
+        </div>
 
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="icon m-0">
-                  <i class="bi bi-headphones"></i>
+        <div class="row g-4">
+
+          <!-- MEGATRON -->
+          <div class="col-lg-4 col-md-6">
+            <article class="project-card">
+
+              <div class="project-art art-chess"
+                   role="img"
+                   aria-label="Illustration of a chessboard and engine search output">
+
+                <div class="chess-board" aria-hidden="true">
+                  <span class="chess-piece" style="left:56.25%;top:6.25%">♚</span>
+                  <span class="chess-piece" style="left:43.75%;top:18.75%">♟</span>
+                  <span class="chess-piece" style="left:68.75%;top:31.25%">♞</span>
+                  <span class="chess-piece light" style="left:43.75%;top:56.25%">♘</span>
+                  <span class="chess-piece light" style="left:18.75%;top:81.25%">♙</span>
+                  <span class="chess-piece light" style="left:56.25%;top:93.75%">♔</span>
                 </div>
-                <h3 class="m-0">Cadence — Music Social App</h3>
-              </div>
 
-              <p class="mb-2">
-                <strong>TypeScript / Next.js / FastAPI / PostgreSQL / Redis / Docker</strong>
-              </p>
-
-              <p class="mb-2">
-                Full-stack music review and discovery platform.
-              </p>
-
-              <ul class="mb-3">
-                <li>
-                  Built a FastAPI and PostgreSQL backend with authentication,
-                  album reviews, ratings, lists, and social features.
-                </li>
-                <li>
-                  Developed a Next.js frontend for music discovery,
-                  album pages, user profiles, and social activity.
-                </li>
-                <li>
-                  Containerized frontend, API, database, and Redis services
-                  with Docker for deployment.
-                </li>
-              </ul>
-
-              <div class="d-flex gap-2">
-                <a class="btn btn-sm btn-primary"
-                   href="https://cadencemusik.com"
-                   target="_blank" rel="noopener noreferrer">
-                  Live Demo
-                </a>
-                <a class="btn btn-sm btn-outline-primary"
-                   href="https://github.com/Adamvalade/Cadence"
-                   target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- MEGATRON CHESS -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item h-100 position-relative">
-
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="icon m-0">
-                  <i class="bi bi-terminal"></i>
+                <div class="engine-label" aria-hidden="true">
+                  <strong>Megatron</strong>
+                  <span>Engine search</span>
+                  <code>UCI · C++</code>
                 </div>
-                <h3 class="m-0">Megatron Chess — C++ Chess Engine</h3>
               </div>
 
-              <p class="mb-2">
-                <strong>C++ / Node.js / JavaScript / UCI / Docker</strong>
-              </p>
+              <div class="project-body">
+                <div class="project-type">Systems / Algorithms</div>
 
-              <p class="mb-2">
-                Playable web chess application powered by a custom C++ engine.
-              </p>
+                <h3>Megatron Chess</h3>
 
-              <ul class="mb-3">
-                <li>
-                  Built a chess engine in C++ using bitboards for efficient
-                  move generation, legal move handling, and position evaluation.
-                </li>
-                <li>
-                  Implemented alpha-beta search, iterative deepening,
-                  quiescence search, move ordering, and Zobrist-based
-                  transposition tables.
-                </li>
-                <li>
-                  Integrated the UCI engine with a browser chess interface
-                  through a Node.js API.
-                </li>
-              </ul>
+                <p class="project-summary">
+                  A playable chess application powered by my own C++ engine—not
+                  a chess library playing the moves.
+                </p>
 
-              <div class="d-flex gap-2">
-                <a class="btn btn-sm btn-primary"
-                   href="https://megatronchess.com"
-                   target="_blank" rel="noopener noreferrer">
-                  Play Chess
-                </a>
-                <a class="btn btn-sm btn-outline-primary"
-                   href="https://github.com/Adamvalade/megatron-chess"
-                   target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
+                <ul class="project-highlights">
+                  <li>
+                    Bitboard move generation, position evaluation, and UCI support.
+                  </li>
+                  <li>
+                    Alpha-beta search, iterative deepening, quiescence search,
+                    and transposition tables.
+                  </li>
+                </ul>
+
+                <div class="tech-stack" aria-label="Technologies">
+                  <span>C++</span>
+                  <span>Node.js</span>
+                  <span>JavaScript</span>
+                  <span>UCI</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://megatronchess.com"
+                     class="btn btn-primary"
+                     target="_blank" rel="noopener noreferrer">
+                    Play chess
+                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+
+                  <a href="https://github.com/Adamvalade/megatron-chess"
+                     class="btn btn-outline-primary"
+                     target="_blank" rel="noopener noreferrer">
+                    Source code
+                  </a>
+                </div>
               </div>
 
-            </div>
+            </article>
           </div>
 
           <!-- FORGEQUEUE -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item h-100 position-relative">
+          <div class="col-lg-4 col-md-6">
+            <article class="project-card">
 
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="icon m-0">
-                  <i class="bi bi-server"></i>
+              <div class="project-art art-queue"
+                   role="img"
+                   aria-label="Illustration of an API sending jobs through Redis to a worker">
+
+                <div class="queue-pipeline" aria-hidden="true">
+                  <div class="queue-node">
+                    <i class="bi bi-code-slash"></i>
+                    <span>API</span>
+                  </div>
+
+                  <i class="bi bi-arrow-right queue-arrow"></i>
+
+                  <div class="queue-node">
+                    <i class="bi bi-database"></i>
+                    <span>Redis</span>
+                  </div>
+
+                  <i class="bi bi-arrow-right queue-arrow"></i>
+
+                  <div class="queue-node">
+                    <i class="bi bi-cpu"></i>
+                    <span>Worker</span>
+                  </div>
                 </div>
-                <h3 class="m-0">ForgeQueue — Distributed Job Queue</h3>
+
+                <div class="queue-features" aria-hidden="true">
+                  <span>Retries</span>
+                  <span>Recovery</span>
+                  <span>Dead-letter queue</span>
+                </div>
               </div>
 
-              <p class="mb-2">
-                <strong>Python / Redis / Docker / REST API</strong>
-              </p>
+              <div class="project-body">
+                <div class="project-type">Backend / Distributed Systems</div>
 
-              <p class="mb-2">
-                Fault-tolerant distributed background job processing system.
-              </p>
+                <h3>ForgeQueue</h3>
 
-              <ul class="mb-3">
-                <li>
-                  Built a Redis-backed distributed job queue supporting
-                  at-least-once delivery, worker leasing, crash recovery,
-                  retries, and dead-letter queues.
-                </li>
-                <li>
-                  Implemented delayed job scheduling and exponential
-                  backoff using Redis sorted sets.
-                </li>
-                <li>
-                  Designed idempotency, deduplication, processing locks,
-                  and REST APIs for reliable queue operations.
-                </li>
-              </ul>
+                <p class="project-summary">
+                  A Redis-backed job queue built around a central question:
+                  what happens when a worker fails?
+                </p>
 
-              <div class="d-flex gap-2">
-                <a class="btn btn-sm btn-primary"
-                   href="https://forgequeue-api.onrender.com/demo/"
-                   target="_blank" rel="noopener noreferrer">
-                  Live Demo
-                </a>
-                <a class="btn btn-sm btn-outline-primary"
-                   href="https://github.com/Adamvalade/forgequeue"
-                   target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
+                <ul class="project-highlights">
+                  <li>
+                    Worker leasing, visibility timeouts, crash recovery,
+                    and at-least-once delivery.
+                  </li>
+                  <li>
+                    Delayed retries with backoff, dead-letter queues,
+                    and idempotent processing.
+                  </li>
+                </ul>
+
+                <div class="tech-stack" aria-label="Technologies">
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>Redis</span>
+                  <span>Docker</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://forgequeue-api.onrender.com/demo/"
+                     class="btn btn-primary"
+                     target="_blank" rel="noopener noreferrer">
+                    View demo
+                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+
+                  <a href="https://github.com/Adamvalade/forgequeue"
+                     class="btn btn-outline-primary"
+                     target="_blank" rel="noopener noreferrer">
+                    Source code
+                  </a>
+                </div>
               </div>
 
-            </div>
+            </article>
+          </div>
+
+          <!-- CADENCE -->
+          <div class="col-lg-4 col-md-6">
+            <article class="project-card">
+
+              <div class="project-art art-cadence"
+                   role="img"
+                   aria-label="Illustrative music album grid for Cadence, not a screenshot of the application">
+
+                <div class="music-window" aria-hidden="true">
+                  <div class="music-window-title">
+                    CADENCE
+                    <span>Listen · Review · Discover</span>
+                  </div>
+
+                  <div class="music-albums">
+                    <div class="music-album">
+                      <i class="bi bi-vinyl"></i>
+                    </div>
+
+                    <div class="music-album">
+                      <i class="bi bi-music-note-beamed"></i>
+                    </div>
+
+                    <div class="music-album">
+                      <i class="bi bi-soundwave"></i>
+                    </div>
+                  </div>
+
+                  <div class="music-footer">
+                    <i class="bi bi-heart-fill"></i>
+                    &nbsp; Reviews, lists, and people you follow
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-type">Full-Stack Development</div>
+
+                <h3>Cadence</h3>
+
+                <p class="project-summary">
+                  A social music application for reviewing albums, keeping
+                  lists, and discovering what friends are listening to.
+                </p>
+
+                <ul class="project-highlights">
+                  <li>
+                    Next.js interface with album search, profiles, reviews,
+                    and a following feed.
+                  </li>
+                  <li>
+                    FastAPI/PostgreSQL backend with authentication
+                    and Docker-based deployment.
+                  </li>
+                </ul>
+
+                <div class="tech-stack" aria-label="Technologies">
+                  <span>TypeScript</span>
+                  <span>Next.js</span>
+                  <span>FastAPI</span>
+                  <span>PostgreSQL</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://cadencemusik.com"
+                     class="btn btn-primary"
+                     target="_blank" rel="noopener noreferrer">
+                    Visit app
+                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </a>
+
+                  <a href="https://github.com/Adamvalade/Cadence"
+                     class="btn btn-outline-primary"
+                     target="_blank" rel="noopener noreferrer">
+                    Source code
+                  </a>
+                </div>
+              </div>
+
+            </article>
           </div>
 
         </div>
@@ -267,45 +890,36 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <section id="about" class="portfolio-section">
+      <div class="container">
+        <div class="row about-layout align-items-center justify-content-center gy-4">
 
-        <div class="row align-items-center justify-content-center gy-4">
-
-          <div class="col-lg-4 col-md-5 d-flex flex-column align-items-center">
+          <div class="col-md-4 d-flex justify-content-center">
             <img src="assets/img/profile-img.jpg"
-                 class="img-fluid mb-3"
-                 style="width:100%;max-width:240px;"
-                 alt="Photo of Adam Valade">
+                 class="profile-photo img-fluid"
+                 alt="Portrait of Adam Valade"
+                 loading="lazy">
           </div>
 
-          <div class="col-lg-5 col-md-7">
-            <div class="about-me" style="max-width:500px;">
+          <div class="col-md-8 about-copy">
+            <h2>About me</h2>
 
-              <h3 class="mb-3">About Me</h3>
+            <p>
+              I'm finishing my Computer Science degree at the University
+              of Michigan in December 2026. I especially enjoy problems
+              where the implementation details matter—algorithms, backend
+              reliability, and the systems connecting an application together.
+            </p>
 
-              <p class="mb-3">
-                I'm a Computer Science student at the University of Michigan,
-                graduating in December 2026. I enjoy working on problems
-                where correctness and performance matter.
-              </p>
+            <p>
+              I build projects to understand those details for myself,
+              from chess search in C++ to retry and recovery behavior
+              in distributed workers.
+            </p>
 
-              <p class="mb-3">
-                My recent work includes building a C++ chess engine,
-                a reliable distributed job queue, and a full-stack
-                music application. I'm particularly interested in backend
-                engineering, systems programming, and understanding
-                how software works beneath the surface.
-              </p>
-
-              <p class="mb-0">
-                <strong>
-                  Seeking entry-level software engineering positions.
-                  Open to relocation.
-                </strong>
-              </p>
-
-            </div>
+            <p class="availability mb-0">
+              Seeking entry-level software engineering roles. Open to relocation.
+            </p>
           </div>
 
         </div>
@@ -313,74 +927,43 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="portfolio-section">
+      <div class="container">
 
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>
-          I'm open to entry-level software engineering opportunities.
-          Email is the best way to reach me.
-        </p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="info-wrap">
-          <div class="row gy-4">
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-linkedin flex-shrink-0"></i>
-                <div>
-                  <h3>
-                    <a href="https://www.linkedin.com/in/adam-valade-690a25270"
-                       target="_blank" rel="noopener noreferrer">
-                      LinkedIn
-                    </a>
-                  </h3>
-                  <p class="mb-0">Connect / message</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-github flex-shrink-0"></i>
-                <div>
-                  <h3>
-                    <a href="https://github.com/Adamvalade"
-                       target="_blank" rel="noopener noreferrer">
-                      GitHub
-                    </a>
-                  </h3>
-                  <p class="mb-0">Code &amp; projects</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>
-                    <a href="mailto:advalade@umich.edu">
-                      advalade@umich.edu
-                    </a>
-                  </h3>
-                  <p class="mb-0">Email me directly</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <div class="portfolio-section-heading">
+          <h2>Get in touch</h2>
+          <p>
+            Interested in working together? Email is the easiest way to reach me.
+          </p>
         </div>
-      </div>
 
+        <div class="contact-links">
+          <a href="mailto:advalade@umich.edu">
+            <i class="bi bi-envelope"></i>Email me
+          </a>
+
+          <a href="https://github.com/Adamvalade"
+             target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github"></i>GitHub
+          </a>
+
+          <a href="https://www.linkedin.com/in/adam-valade-690a25270"
+             target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-linkedin"></i>LinkedIn
+          </a>
+        </div>
+
+      </div>
     </section>
 
   </main>
 
-  <!-- SCROLL TOP -->
-  <a href="#" id="scroll-top"
+  <footer class="portfolio-footer">
+    © 2026 Adam Valade
+  </footer>
+
+  <a href="#hero"
+     id="scroll-top"
      class="scroll-top d-flex align-items-center justify-content-center"
      aria-label="Scroll to top">
     <i class="bi bi-arrow-up-short"></i>
@@ -388,7 +971,6 @@
 
   <div id="preloader"></div>
 
-  <!-- SCRIPTS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -399,7 +981,6 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
   <script src="assets/js/main.js"></script>
 
 </body>
